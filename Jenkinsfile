@@ -23,9 +23,7 @@ node {
  sh "cd /Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin"
 
       sh "jmeter -Jjmeter.save.saveservice.output_format=xml
-
           -n -t app//Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin/test plans/JMeter.jmx
-
             -l /tmp/reports/JMeter.jtl -e -o /tmp/reports/HtmlReport"
 
  }
