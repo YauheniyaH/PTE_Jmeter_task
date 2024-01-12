@@ -2,7 +2,7 @@ node {
 
  stage('clone git repo'){
 
- git 'https://github.com/YauheniyaH/PTE_Jmeter_task/PTE_jmeter_task_0101.jmx'
+ git 'https://github.com/YauheniyaH/PTE_Jmeter_task/Jmeter_task'
 
  }
 
