@@ -18,7 +18,7 @@ node {
 
  stage('run test'){
   
-// sh "rmdir /tmp/reports"
+ sh "rmdir /tmp/reports"
  sh "mkdir /tmp/reports"
 
  sh "cd /Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin"
@@ -31,7 +31,7 @@ node {
 
  stage('publish results'){
 
- sh 'mv /tmp/reports/* $WORKSPACE/$BUILD_NUMBER/'
+ sh 'mv /$WORKSPACE/$BUILD_NUMBER/tmp/reports/'
 
  archiveArtifacts artifacts: '$WORKSPACE/$BUILD_NUMBER/JMeter.jtl, $WORKSPACE/$BUILD_NUMBER/HtmlReport/index.html'
 
