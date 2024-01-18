@@ -10,7 +10,7 @@ node {
 
  stage('configure') {
 
-        sh "mkdir $WORKSPACE/$BUILD_NUMBER/"
+        sh "mkdir ${WORKSPACE}/${BUILD_NUMBER}/"
 
     }
 
