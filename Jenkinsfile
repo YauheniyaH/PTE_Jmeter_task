@@ -23,7 +23,7 @@ node {
 
  sh "cd /Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin"
 
-      sh """/Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin/jmeter -n -t "/Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin/test_plans/Jmeter task 01/Jmeter task 01 copy 03.jmx" -l /tmp/reports/JMeter.jtl -e -o /tmp/reports/HtmlReport"""
+      sh """/Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin/jmeter -n -t "/Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin/test_plans/Jmeter task 01/Jmeter task 01 copy 03.jmx" -l /tmp/report/JMeter.jtl -e -o /tmp/report/HtmlReport"""
 
  }
 
@@ -31,7 +31,7 @@ node {
 
  stage('publish results'){
 
- sh 'mv /$WORKSPACE/$BUILD_NUMBER/tmp/reports/'
+ sh 'mv /$WORKSPACE/$BUILD_NUMBER/tmp/report/'
 
  archiveArtifacts artifacts: '$WORKSPACE/$BUILD_NUMBER/JMeter.jtl, $WORKSPACE/$BUILD_NUMBER/HtmlReport/index.html'
 
