@@ -18,24 +18,24 @@ node {
 
  stage('run test'){
   
- sh "rmdir /tmp/reports"
- sh "mkdir /tmp/reports"
+ //sh "rmdir /temp/reports"
+ sh "mkdir /temp/reports"
 
  sh "cd /Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin"
 
-      sh """/Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin/jmeter -n -t "/Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin/test_plans/Jmeter task 01/Jmeter task 01 copy 03.jmx" -l /tmp/report/JMeter.jtl -e -o /tmp/report/HtmlReport"""
+      sh """/Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin/jmeter -n -t "/Users/Yauheniya_Hladkaya/Trainings/apache-jmeter-5.6.2/bin/test_plans/Jmeter task 01/Jmeter task 01 copy 03.jmx" -l /temp/reports/JMeter.jtl -e -o /temp/reports/HtmlReport"""
 
  }
 
  
 
- stage('publish results'){
+// stage('publish results'){
 
- sh "mv /tmp/reports/* $WORKSPACE/$BUILD_NUMBER/"
+// sh "mv /temp/reports/* $WORKSPACE/$BUILD_NUMBER/"
 
- archiveArtifacts artifacts: '$WORKSPACE/$BUILD_NUMBER/JMeter.jtl, $WORKSPACE/$BUILD_NUMBER/HtmlReport/index.html'
+// archiveArtifacts artifacts: '$WORKSPACE/$BUILD_NUMBER/JMeter.jtl, $WORKSPACE/$BUILD_NUMBER/HtmlReport/index.html'
 
-    } 
+//    } 
 
 
 }
