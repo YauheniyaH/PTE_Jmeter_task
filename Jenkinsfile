@@ -31,7 +31,7 @@ node {
 
  stage('publish results'){
 
- sh 'mv /$WORKSPACE/$BUILD_NUMBER/tmp/report/'
+ sh "mv /tmp/reports/* $WORKSPACE/$BUILD_NUMBER/"
 
  archiveArtifacts artifacts: '$WORKSPACE/$BUILD_NUMBER/JMeter.jtl, $WORKSPACE/$BUILD_NUMBER/HtmlReport/index.html'
 
